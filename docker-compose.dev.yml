@@ -1,0 +1,13 @@
+services:
+  chick-chat-dev:
+    container_name: chick-chat-container
+    image: chick-chat-dev-image
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/chick-chat
+      - /chick-chat/node_modules
+    command: npm run dev 
